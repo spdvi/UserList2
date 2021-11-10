@@ -26,6 +26,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.ListModel;
 import javax.swing.SwingUtilities;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -414,6 +415,8 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         fchUserImageChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG FILES", "jpg", "jpeg");
+        fchUserImageChooser.addChoosableFileFilter(filter);
 //        String noImageFileString = getClass().getClassLoader().getResourceAsStream("/images/" + noPictureFileName);
         try {
             BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/spdvi/images/" + noPictureFileName));
